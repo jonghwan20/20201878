@@ -94,10 +94,10 @@ def solution(age):
 from cmath import sqrt
 def solution(r1, r2):
     answer = 0
-    for i in range(0,r1):                                              #제곱근 함수인 sqrt사용
-        answer+=int(sqrt(r2**2-i**2)) - int(sqrt(r1**2-i**2-1))        #정수만 추출하기 위해 int사용
-    for i in range(r1,r2):                                             #원의 방정식 활용
-        answer+=int(sqrt(r2**2-i**2))                                  
+    for x in range(0,r1):                                              #제곱근 함수인 sqrt사용
+        answer+=int(sqrt(r1**2-x**2))                                  #정수만 추출하기 위해 int사용
+    for y in range(r1,r2):                                             #원의 방정식 활용
+        answer+=int(sqrt(r2**2-y**2))                                  
     return answer * 4                                                  #원의 1사분면 곱하기4를 해줘서 원 전체를 구함
 
 # Q.5 10점
@@ -121,6 +121,7 @@ def solution(r1, r2):
 # numbers = [8, 30, 17, 2, 23]
 
 def solution(numbers):
-    numbers = list(map(str,numbers))                           #문자열로 바꾼 numbers를 3번 곱해서 세자리수로 만듬
-    numbers.sort(key=lambda x: x*3, reverse=True)              #sort는 오름차순이 기본이어서 reverse=True 로 내림차순으로 바꿈
-    return str(int(''.join(numbers)))                          #join을 사용해 리스트를 연결하여 하나의 문자열로 만들어줌
+    numbers = str(numbers)                             #문자열로 바꾼 numbers를 3번 반복해서 세자리수로 만듬
+    numbers.sort(key=lambda x: x*3, reverse=True)          #sort는 오름차순이 기본이어서 reverse=True 로 내림차순으로 바꿈
+    numbers = list(map(lambda x: x*3, numbers) 
+    return ''.join(numbers)                            #join을 사용해 리스트를 연결하여 하나의 문자열로 만들어줌
