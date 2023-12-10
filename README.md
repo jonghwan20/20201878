@@ -121,7 +121,9 @@ def solution(r1, r2):
 # numbers = [8, 30, 17, 2, 23]
 
 def solution(numbers):
-    numbers = str(numbers)                             #문자열로 바꾼 numbers를 3번 반복해서 세자리수로 만듬
-    numbers.sort(key=lambda x: x*3, reverse=True)          #sort는 오름차순이 기본이어서 reverse=True 로 내림차순으로 바꿈
-    numbers = list(map(lambda x: x*3, numbers) 
+    numbers = str(numbers)                             
+    numbers = list(map(lambda x: x*3, numbers)         #문자열로 바꾼 numbers를 3번 반복해서 세자리수로 만듬
+    numbers.sort(key=lambda x: x*3, reverse=True)      #sort는 오름차순이 기본이어서 reverse=True 로 내림차순으로 바꿈
     return ''.join(numbers)                            #join을 사용해 리스트를 연결하여 하나의 문자열로 만들어줌
+
+                                                        
